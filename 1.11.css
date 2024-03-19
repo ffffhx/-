@@ -1,0 +1,616 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* input{
+    line-height: normal; 
+} */
+body {
+    background-image: url("s.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.left {
+    width: 64%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+
+}
+
+.left-top {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.left-bottom-span {
+    color: #fff;
+    font-style: normal;
+    font-size: 15px;
+    font-family: "Microsoft YaHei", tahoma, verdana, sans-serif;
+}
+
+.left-bottom-a {
+    color: #d2d8e7;
+    font-style: normal;
+    font-size: 12px;
+    font-family: "Microsoft YaHei", tahoma, verdana, sans-serif;
+}
+
+.left-bottom {
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+
+/*弹性盒子模型下再调整只需要margin就可以了*/
+.right {
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: #000;
+    opacity: 0.15; */
+
+
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+
+
+    /* backdrop-filter: opacity(20%); */
+    /* backdrop-filter: grayscale(10%); */
+    /*灰度*/
+    /* background-image: url("blur.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom; */
+    /*末端对齐 即flex-end*/
+}
+
+.right-top {
+    display: flex;
+    flex: 1;
+    align-self: flex-end;
+}
+
+.background-love {
+    margin-top: 50px;
+    width: 20px;
+    height: 20px;
+    background-image: url("白色爱心.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.background-love:hover {
+    margin-top: 50px;
+    width: 20px;
+    height: 20px;
+    background-image: url("红色爱心\(1\).jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.background-question-mark {
+    margin-top: 50px;
+    width: 20px;
+    height: 20px;
+    background-image: url("灰色问号.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 100px;
+}
+
+.background-question-mark:hover {
+    margin-top: 50px;
+    width: 20px;
+    height: 20px;
+    background-image: url("蓝色问号.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 100px;
+}
+
+
+
+.right-bottom {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    border-radius: 4px;
+    /* justify-content: flex-start; */
+}
+
+.right-bottom-dropdown-box {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: 'iconfont';
+    /* Project id 4410163 */
+    src: url('//at.alicdn.com/t/c/font_4410163_lscu8g5rceb.woff2?t=1705197025474') format('woff2'),
+        url('//at.alicdn.com/t/c/font_4410163_lscu8g5rceb.woff?t=1705197025474') format('woff'),
+        url('//at.alicdn.com/t/c/font_4410163_lscu8g5rceb.ttf?t=1705197025474') format('truetype');
+}
+
+html {
+    font-family: iconfont;
+}
+
+/* span::after {
+    content: "\e645";
+} */
+
+.right-bottom-dropdown-box {
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    bottom: 10px;
+}
+
+/*设置relative的原因是要让其做content的父元素*/
+/* display: inline-block; */
+
+
+.dropbtn {
+    align-items: flex-end;
+    cursor: pointer;
+    background-color: transparent;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    line-height: 1.5;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    background: #fff;
+    right: 0px;
+    margin-right: 40px;
+    margin-top: 20px;
+    width: 120px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+
+.dropdown-content a {
+    color: black;
+    padding-top: 12px;
+    padding-bottom: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover{
+    background-color: gray;
+}
+
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: 'iconfont';
+    /* Project id 4410163 */
+    src: url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.woff2?t=1705330115138') format('woff2'),
+        url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.woff?t=1705330115138') format('woff'),
+        url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.ttf?t=1705330115138') format('truetype');
+}
+
+.right-bottom-login {
+    display: flex;
+    width: 60%;
+    height: 80%;
+    flex-direction: column;
+    border-radius: 4px;
+    /* background-color: #fff; */
+    margin-left: 150px;
+    color: #aaa;
+    /* position: absolute;
+    right: 30px; */
+    /* margin-right: 50px;  margin是外部扩展  padding是内部扩展  刚刚想实现应该用position:absolute*/
+}
+
+/*子代选择器两个点 中间用空格隔开*/
+/* .right-bottom-login .login-one{
+    
+} */
+
+.login-one {
+    height: 12%;
+    color: #212121;
+    font-weight: bold;
+    display: flex;
+    background-color: #fff;
+}
+
+.email-login {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+hr {
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.login-two {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.one {
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    align-items: center;
+    /* height: 25%; */
+    height: 50px;
+    display: flex;
+}
+
+.one label form div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#username {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.two {
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.two-label-one {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.two-label-two {
+    display: inline-block;
+    position: relative;
+    margin-top: 5px;
+    width: 85px;
+}
+
+.two-label-three {
+    margin-top: 5px;
+    margin-left: 120px;
+}
+
+.email-content {
+    display: none;
+    position: absolute;
+    color: #212121;
+    line-height: 50px;
+    border: solid;
+    border-color: #ddd;
+    border-radius: 2px;
+    overflow-y: scroll;
+    margin-top: 205px;
+    height: 150px;
+    width: 280px;
+    
+    z-index: 1;
+    border-width: 1px;
+    background-color: #fff;
+}
+
+.box2{
+    display: flex;
+}
+.box0{
+    height: 100%;
+    width: 50px;
+    text-align: center;
+}
+
+.box2:hover{
+background-color: gray;
+}
+
+
+.email-content span {
+    display: block;
+}
+
+.two .two-email {
+    display: flex;
+}
+
+
+.three {
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 20px;
+    margin-left: 20px;
+    /* height: 25%; */
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.three div {
+    display: flex;
+}
+
+.three div i {
+    padding: 10px;
+}
+
+.four {
+    border-style: solid;
+    border-width: 1px;
+    margin-right: 20px;
+    margin-left: 20px;
+    /* height: 25%; */
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* align-content: center;    必须当有多行项目时，此代码才生效*/
+}
+
+.four-label-one {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.four-label-two {
+    display: flex;
+    align-items: center;
+}
+
+.fourSelect {
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+.box1:hover{
+    background-color: gray;
+    }
+
+
+.four-label-three {
+    display: flex;
+    align-items: center;
+}
+
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: 'iconfont';
+    /* Project id 4410163 */
+    src: url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.woff2?t=1705330115138') format('woff2'),
+        url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.woff?t=1705330115138') format('woff'),
+        url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.ttf?t=1705330115138') format('truetype');
+}
+
+.login-three {
+    flex: 1;
+    display: flex;
+    background-color: #fff;
+}
+
+.icon-fangkuangweixuan,.icon-tongyixuanzhong{
+    font-size: 20px;
+}
+
+.icon-fangkuangweixuan:hover{
+    color: #057ab8;
+}
+.icon-tongyixuanzhong{
+    color: #057ab8;
+}
+
+
+.rememberUsername {
+    margin-left: 20px;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/c/font_4410163_ytsd8kcxt9.woff2?t=1705240087647') format('woff2'),
+        url('//at.alicdn.com/t/c/font_4410163_ytsd8kcxt9.woff?t=1705240087647') format('woff'),
+        url('//at.alicdn.com/t/c/font_4410163_ytsd8kcxt9.ttf?t=1705240087647') format('truetype');
+}
+
+
+
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: 'iconfont';  /* Project id 4410163 */
+    src: url('//at.alicdn.com/t/c/font_4410163_dpnzllmug0j.woff2?t=1705757597206') format('woff2'),
+         url('//at.alicdn.com/t/c/font_4410163_dpnzllmug0j.woff?t=1705757597206') format('woff'),
+         url('//at.alicdn.com/t/c/font_4410163_dpnzllmug0j.ttf?t=1705757597206') format('truetype');
+  }
+
+/* .showTag{
+    background-image: url("check_on.png");
+} */
+.login-four {
+    flex: 1;
+    background-color: #fff;
+}
+
+.login-four button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.login-four button {
+    width: 80%;
+    margin-right: 20px;
+    margin-left: 30px;
+    background-color: #67a5ec;
+    color: beige;
+    border-color: #057ab8;
+}
+
+.login-five {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fff;
+}
+
+.input {
+    border: 0;
+    outline: 0;
+    padding: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+#icon1{
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.username {
+    border: 0px;
+    outline: 0px;
+}
+
+.password {
+    border: 0px;
+    outline: 0px;
+}
+
+.autoSelectBtn {
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+    margin-right: 140px;
+    cursor: pointer;
+    width: 75px;
+}
+
+
+.auto-select-content {
+    display: none;
+    position: absolute;
+    color: #212121;
+    line-height: 50px;
+    border: solid;
+    border-color: #ddd;
+    border-radius: 2px;
+    margin-top: 205px;
+    height: 150px;
+    width: 280px;
+    z-index: 1;
+    border-width: 1px;
+    background-color: #fff;
+}
+.box1{
+    display: flex;
+}
+.box{
+    height: 100%;
+    width: 50px;
+    text-align: center;
+}
+.auto-select-content a {
+    display: block;
+    color: #333;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.icon-xialajiantou{
+    font-size: 20px;
+}
+
+.auto-select-content a i{
+    color: #057ab8;
+}
+
+.show {
+    display: block;
+}
+
+
+
+.four-label-three {
+    cursor: pointer;
+}
+
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: 'iconfont';
+    /* Project id 4410163 */
+    src: url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.woff2?t=1705330115138') format('woff2'),
+        url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.woff?t=1705330115138') format('woff'),
+        url('//at.alicdn.com/t/c/font_4410163_guasrqqvcls.ttf?t=1705330115138') format('truetype');
+}
+
+
+.forget-password-box a {
+    color: #d2d8e7;
+}
+
+/* .icon-duigou{
+    color: #057ab8;
+    font-size: large;
+} */

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆界面重新制作</title>
+</head>
+
+<body>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.woff2?t=1709808208708') format('woff2'),
+                url('./font/iconfont.woff?t=1709808208708') format('woff'),
+                url('./font/iconfont.ttf?t=1709808208708') format('truetype');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 300px;
+            height: 600px;
+            background-color: red;
+        }
+
+        .loginOne {
+            width: 160px;
+            height: 100px;
+        }
+
+        .loginThree {
+            height: 350px;
+            width: 270px;
+        }
+
+        .username {
+            width: 270px;
+            height: 50px;
+            border: solid 2px;
+            border-bottom: 1px;
+            display: flex;
+        }
+
+        .usernameLeft {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            background-color: #fff;
+        }
+
+        .usernameLeft span {
+            font-size: 30px;
+            color: gray;
+        }
+
+        .colorChange {
+            color: black;
+        }
+
+        .usernameRight input {
+            appearance: none;
+            border: none;
+            outline: none;
+            width: 220px;
+            height: 48px;
+        }
+
+        .emailCenter input {
+            appearance: none;
+            border: none;
+            outline: none;
+            width: 220px;
+            height: 48px;
+        }
+
+        .passwordRight input {
+            appearance: none;
+            border: none;
+            outline: none;
+            width: 220px;
+            height: 48px;
+        }
+
+        .emailLeft {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            background-color: #fff;
+        }
+
+        .passwordLeft {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            background-color: #fff;
+        }
+
+
+
+        .email {
+            width: 270px;
+            height: 50px;
+            border: solid 2px;
+            border-bottom: 1px;
+            display: flex;
+        }
+
+        .emailCenter {
+            width: 220px;
+            height: 50px;
+            background-color: #fff;
+        }
+
+        .emailBtn {
+            width: 220px;
+            height: 50px;
+        }
+
+        .emailContent {
+            width: 270px;
+            height: 200px;
+            background-color: blue;
+            position: relative;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            right: 50px;
+            display: none;
+
+        }
+
+        .EC {
+            height: 50px;
+            width: 270px;
+            display: flex;
+
+        }
+
+        .ect {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .ecb {
+            width: 210px;
+            height: 50px;
+            line-height: 3;
+            font-size: 15px;
+        }
+
+        .password {
+            width: 270px;
+            height: 50px;
+            border: solid 2px;
+            border-bottom: 1px;
+            display: flex;
+        }
+
+        .style {
+            width: 270px;
+            height: 50px;
+            border: solid 2px;
+            display: flex;
+        }
+
+        .styleLeft {
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            background-color: #fff;
+        }
+
+        .styleCenter {
+            width: 190px;
+        }
+
+        .selectBtn {
+            width: 190px;
+            height: 50px;
+            background-color: #fff;
+            line-height: 3;
+        }
+
+        .selectContent {
+            background-color: #fff;
+            width: 270px;
+            position: relative;
+            right: 50px;
+            height: 150px;
+            display: none;
+            border-top: solid 1px gray;
+        }
+
+        .styleRight {
+            width: 30px;
+            height: 50px;
+            background-color: #fff;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .SC {
+            display: flex;
+            height: 50px;
+
+        }
+
+        .SC div:nth-child(1) {
+            width: 50px;
+            height: 50px;
+        }
+
+        .SC {
+            display: flex;
+            height: 50px;
+        }
+
+        .SC div:nth-child(1) {
+            width: 50px;
+            height: 50px;
+        }
+
+        .SC {
+            display: flex;
+            height: 50px;
+            width: 270px;
+        }
+
+        .SC div:nth-child(1) {
+            width: 50px;
+            height: 50px;
+        }
+
+        .loginFour {
+            height: 50px;
+            width: 160px;
+        }
+
+        .loginFive {
+            height: 80px;
+            width: 270px;
+            text-align: center;
+        }
+
+        .loginFive button {
+            width: 260px;
+            height: 50px;
+            background-color: blue;
+            color: #fff;
+        }
+
+        .loginSix {
+            height: 20px;
+            width: 150px;
+        }
+
+        .s2 {
+            width: 220px;
+        }
+        .icon{
+            pointer-events: none;
+        }
+    </style>
+    <div class="container">
+        <div class="loginOne">邮箱账号登录</div>
+        <div class="loginTwo"></div>
+        <div class="loginThree">
+            <div class="username">
+                <div class="usernameLeft"><span class="iconfont">&#xe643;</span></div>
+                <div class="usernameRight">
+                    <input type="text" placeholder="用户名" id="yongHuMing">
+                </div>
+            </div>
+            <div class="email">
+                <div class="emailLeft"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-youxiang"></use>
+                    </svg></div>
+                <div class="emailCenter">
+                    <div class="emailBtn">hit.edu.cn</div>
+                    <div class="emailContent">
+                        <div class="EC">
+                            <div class="ect"><svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-youxiang"></use>
+                                </svg></div>
+                            <div class="ecb">hit.edu.cn</div>
+                        </div>
+                        <div class="EC">
+                            <div class="ect"></div>
+                            <div class="ecb">alu.hit.edu.cn</div>
+                        </div>
+                        <div class="EC">
+                            <div class="ect"></div>
+                            <div class="ecb">2004.hit.edu.cn</div>
+                        </div>
+                        <div class="EC">
+                            <div class="ect"></div>
+                            <div class="ecb">ftcl.hit.edu.cn</div>
+                        </div>
+                        <div class="EC">
+                            <div class="ect"></div>
+                            <div class="ecb">hitwh.edu.cn</div>
+                        </div>
+                        <div class="EC">
+                            <div class="ect"></div>
+                            <div class="ecb">run-to.com</div>
+                        </div>
+                        <div class="EC">
+                            <div class="ect"></div>
+                            <div class="ecb">hit.edu.cn</div>
+                        </div>
+                        <div class="EC">
+                            <div class="ect"></div>
+                            <div class="ecb">ir.hit.edu.cn</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="emailRight"></div>
+            </div>
+            <div class="password">
+                <div class="passwordLeft"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tianchongxing-"></use>
+                    </svg></div>
+                <div class="passwordRight"><input type="password" placeholder="密 码"></div>
+            </div>
+            <div class="style">
+                <div class="styleLeft"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-guanwangshouye-yuangongguanliwenti"></use>
+                    </svg></div>
+                <div class="styleCenter">
+                    <div class="selectBtn">自动选择</div>
+                    <div class="selectContent">
+                        <div class="SC">
+                            <div class="s1">√</div>
+                            <div class="s2">自动选择</div>
+                        </div>
+                        <div class="SC">
+                            <div class="s1"></div>
+                            <div class="s2">XT5.0风格</div>
+                        </div>
+                        <div class="SC">
+                            <div class="s1"></div>
+                            <div class="s2">XT3.0风格</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="styleRight"></div>
+            </div>
+        </div>
+        <div class="loginFour">
+            <input type="checkbox">记住用户名
+        </div>
+        <div class="loginFive"><button>
+                登录
+            </button></div>
+        <div class="loginSix">忘记密码</div>
+    </div>
+    <script src="./font/iconfont.js"></script>
+    <script>
+        // window.addEventListener('click', function (event) {
+        //     event.stopPropagation();
+        // });
+        const username = document.querySelector('.username');
+        const usernameLeft = document.querySelector('.usernameLeft');
+        const selectBtn = document.querySelector('.selectBtn');
+        const selectContent = document.querySelector('.selectContent');
+        const style = document.querySelector('.style');
+        const s1 = document.querySelectorAll('.s1');
+        const s2 = document.querySelectorAll('.s2');
+        const SC = document.querySelectorAll('.SC');
+        const email = document.querySelector('.email')
+        const emailBtn = document.querySelector('.emailBtn')
+        const emailContent = document.querySelector('.emailContent')
+        const EC = document.querySelectorAll('.EC')
+        const ect = document.querySelectorAll('.ect');
+        const usernameRight = document.querySelector('.usernameRight');
+        const usernameLeftSpan = document.querySelector('.usernameLeft span');
+            //点击改变颜色
+        usernameRight.addEventListener('click', () => {
+            usernameLeftSpan.classList.add('colorChange')
+            console.log(666);
+        })
+        //点击出现show  当设置点击其他区域show消失的时候，事件冒泡会阻止这件事情
+        style.addEventListener('click', () => {
+            selectContent.classList.toggle('show');
+        })
+        //点击其他区域的时候show会消失
+        window.addEventListener('click', (event) => {
+            if (!event.target.matches('.selectBtn') &&  !event.target.matches('.styleRight')  && event.target.className !== 'styleLeft' && event.target.className !== 'emailBtn') {
+                selectContent.classList.remove('show');
+                emailContent.classList.remove('show');
+            }
+        })
+        //事件委托的原理是事件冒泡
+        //采用事件委托的方式，给父元素加上点击事件监听，然后利用event.target的方式从而改变文本的内容
+        // selectContent.addEventListener('click',(event)=>{
+        //     selectBtn.innerHTML = event.target.innerHTML;
+        // })
+
+
+        // s2.forEach((element) => {
+        //     element.addEventListener('click', () => {
+        //         selectBtn.innerHTML = element.innerHTML;
+        //     })
+        // })
+        //精妙之处在于，element.querySelector
+        // selectContent.addEventListener('click',(e)=>{
+        //     const ele = e.target;
+        //     console.log(ele);
+        //     console.log(e);
+        //     ele.querySelector('.s1').innerHTML = '';
+        //     selectBtn.innerHTML = ele.querySelector('.s2').innerHTML;
+        //     ele.querySelector('.s1').innerHTML = '√';
+        // })
+
+        SC.forEach((element) => {
+            element.addEventListener('click', () => {
+                s1.forEach((el) => {
+                    el.innerHTML = '';
+                })
+                selectBtn.innerHTML = element.querySelector('.s2').innerHTML;
+                element.querySelector('.s1').innerHTML = '√';
+            })
+        })
+
+
+        email.addEventListener('click', () => {
+            emailContent.classList.toggle('show');
+        })
+        Array.from(EC).forEach((element) => {
+            element.addEventListener('click', () => {
+                Array.from(ect).forEach((ele) => {
+                    ele.innerHTML = '';
+                })
+                element.querySelector('.ect').innerHTML = `<svg class="icon" aria-hidden="true"><use xlink:href="#icon-youxiang"></use></svg>`;
+                emailBtn.innerHTML = element.querySelector('.ecb').innerHTML
+            })
+        })
+    </script>
+</body>
+
+</html>
